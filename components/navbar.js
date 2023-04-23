@@ -10,15 +10,15 @@ const Navbar = () => {
     return (
         <div className='shadow-md w-full fixed top-0 left-0 font-[Poppins]'>
             <div className='md:flex items-center justify-between bg-white py-6 md:px-10 px-7'>
-                <div className='font-bold text-2xl cursor-pointer flex items-center font-[Poppins] 
+                <div className='text-lg sm:text-2xl font-bold cursor-pointer flex items-center font-[Poppins] 
                     text-gray-800'>
-                    <span className='text-3xl text-red-600 mr-1 pt-2'>
+                    <span className='text-2xl sm:text-3xl text-red-600 mr-1 pt-2'>
                         <ion-icon name="logo-ionic"></ion-icon>
                     </span>
                         Chokbulls
                 </div>
             
-                <div onClick={()=>setOpen(!open)} className='text-3xl absolute right-8 top-6 cursor-pointer md:hidden'>
+                <div onClick={()=>setOpen(!open)} className='text-2xl sm:text-3xl absolute right-8 top-6 my-auto cursor-pointer md:hidden'>
                     <ion-icon name={open ? 'close':'menu'}></ion-icon>
                 </div>
     
@@ -30,10 +30,10 @@ const Navbar = () => {
                             </div>
                         ))
                     }
-                    <a className='text-white bg-red-600 md:ml-9 text-sm duration-500 px-5 py-2 font-semibold'>Sign in</a>
+                    <a className='text-white bg-red-600 md:ml-9 text-sm duration-500 px-5 py-2 font-semibold rounded-sm cursor-pointer'>Sign in</a>
                 </div>
             </div>
-      </div>
+        </div>
     )
 }
 
