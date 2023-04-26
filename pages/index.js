@@ -15,14 +15,14 @@ export default function Home() {
         {/* Jumbotron */}
         <div className="px-20 flex justify-evenly">
           <div className="text-[190px] hidden lg:block w-[350px]">
-            <Image src="/img/jumbotron.jpg" width={350} height={0} />
+            <Image src="/img/jumbotron3.jpg" width={350} height={0} />
           </div>
           <div className="text-center lg:text-left">
             <h1 className="text-5xl md:text-6xl text-white font-semibold">Train Like a <br /> <span className="text-[#CF0A0A]">Championship</span></h1>
             <p className="mt-6 text-[#b7b7b7]">
               The First & Largest <span className="font-semibold">Fight Camp</span> in Makassar, <span className="font-semibold">Indonesia</span>
             </p>
-            <button className="mt-8 bg-[#CF0A0A] hover:bg-[#b90707] px-4 md:px-5 py-3 text-sm text-white rounded-sm font-semibold">
+            <button className="mt-8 bg-[#CF0A0A] hover:bg-[#b90707] px-4 md:px-5 py-3 text-sm text-white rounded-md font-semibold">
               Join now
             </button>
           </div>
@@ -52,22 +52,38 @@ export default function Home() {
         <hr className="mt-16 md:mt-18 lg:mt-26 xl:mt-32 w-1/2 mx-auto" />
 
         {/* Training */}
-        <div className="px-4 lg:px-20 mt-20">
-          <h1 className="text-3xl font-semibold text-white tracking-wide">Our Training</h1>
+        <div className="px-4 lg:px-20  mt-28 md:mt-20">
+          <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide">Our Training</h1>
 
-          <div className="mt-14 flex justify-between gap-5 mx-auto">
-            <div className="bg-[url('/img/gambar-training.jpg')] rounded-md bg-left p-5 flex-initial w-64 hover:w-96 transition-all duration-700">
+          <div className="mt-14 grid grid-cols-2 gap-4 lg:flex justify-between lg:gap-5 mx-auto">
+            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white drop-shadow-lg shadow-inner font-semibold">Muay Thai</h1>
             </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] rounded-md bg-left p-5 flex-initial w-64 hover:w-96 transition-all duration-700">
+            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">Boxing</h1>
             </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] rounded-md bg-left p-5 flex-initial w-64 hover:w-96 transition-all duration-700">
+            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">MMA</h1>
             </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] rounded-md bg-left p-5 flex-initial w-64 hover:w-96 transition-all duration-700">
+            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">BJJ</h1>
             </div>
+          </div>
+        </div>
+
+        {/* About */}
+        <div className="px-8 lg:px-20 flex justify-evenly gap-2 flex-col md:flex-row mt-48 md:mt-[260px]">
+          <div className="text-white flex flex-col m-auto">
+            <h1 className="text-3xl lg:text-4xl font-semibold tracking-wide">Welcome to Chokbulls</h1>
+            <hr className="w-1/2 mt-10" />
+            <p className="mt-10 text-sm text-[#b7b7b7] leading-loose tracking-wide">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br />
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br />
+              Ut enim ad minim veniam lorem ipsum dolor sit amet
+            </p>
+          </div>
+          <div className="mt-10 md:mt-0 m-auto">
+            <Image src="/img/chokbulls.jpg" width={400} height={0} className="rounded-md"/>
           </div>
         </div>
       </div>
