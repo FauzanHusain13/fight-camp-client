@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
     let Links =[
@@ -25,7 +26,7 @@ const Navbar = () => {
                     {
                         Links.map((link)=>(
                             <div key={link.name} className='md:ml-10 text-sm md:my-0 my-7'>
-                                <a href={link.link} className='text-white hover:text-[#bdbdbd] duration-500'>{link.name}</a>
+                                <Link href={link.link} className='text-white hover:text-[#bdbdbd] duration-500'>{link.name}</Link>
                             </div>
                         ))
                     }
