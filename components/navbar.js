@@ -8,10 +8,9 @@ const Navbar = () => {
     ];
     let [open,setOpen]= useState(false);
     return (
-        <div className='w-full mt-[-70px] top-0 left-0 bg-[#252525] font-[Poppins]'>
+        <div className='w-full top-0 left-0 bg-[#252525] font-[Poppins]'>
             <div className='md:flex justify-between py-6 md:px-10 px-7'>
-                <div className='text-lg sm:text-2xl font-bold cursor-pointer flex items-center font-[Poppins] 
-                    text-white'>
+                <div className='text-lg sm:text-2xl font-bold cursor-pointer flex items-center font-[Poppins] text-white'>
                     <span className='text-2xl sm:text-3xl text-[#F05454] mr-1 pt-2'>
                         <ion-icon name="logo-ionic"></ion-icon>
                     </span>
