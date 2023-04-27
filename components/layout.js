@@ -14,7 +14,7 @@ export default function Layout({ children }) {
         <script noModule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
       </Head>
       <Navbar />
-      <body className="mt-[90px] bg-[#252525] font-[Poppins]">
+      <body className="mt-[70px] bg-[#252525] font-[Poppins]">
         {children}
       </body>
       <Footer />

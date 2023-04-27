@@ -17,7 +17,7 @@ export default function Home() {
           <div className="text-[190px] hidden lg:block w-[350px]">
             <Image src="/img/jumbotron3.jpg" width={350} height={0} />
           </div>
-          <div className="text-center lg:text-left">
+          <div className="text-center my-auto lg:text-left">
             <h1 className="text-5xl md:text-6xl text-white font-semibold">Train Like a <br /> <span className="text-[#CF0A0A]">Championship</span></h1>
             <p className="mt-6 text-[#b7b7b7]">
               The First & Largest <span className="font-semibold">Fight Camp</span> in Makassar, <span className="font-semibold">Indonesia</span>
