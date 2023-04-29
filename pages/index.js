@@ -56,18 +56,18 @@ export default function Home() {
           <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide">Our Training</h1>
 
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 md:flex justify-between lg:gap-5 mx-auto">
-            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
+            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white drop-shadow-lg shadow-inner font-semibold">Muay Thai</h1>
-            </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
+            </Link>
+            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">Boxing</h1>
-            </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
+            </Link>
+            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">MMA</h1>
-            </div>
-            <div className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
+            </Link>
+            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
               <h1 className="text-xl text-white font-semibold">BJJ</h1>
-            </div>
+            </Link>
           </div>
         </div>
 
