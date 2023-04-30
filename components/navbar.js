@@ -2,12 +2,13 @@ import { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-    let Links =[
+    const Links =[
         {name:"Home",link:"/"},
         {name:"Gallery",link:"/gallery"},
         {name:"Contact",link:"/contact"},
     ];
-    let [open,setOpen]= useState(false);
+    
+    const [open, setOpen]= useState(false);
     return (
         <div className='w-full top-0 left-0 bg-[#252525] font-[Poppins]'>
             <div className='md:flex justify-between py-6 md:px-10 px-7'>

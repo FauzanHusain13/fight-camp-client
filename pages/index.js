@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import TrainingItem from '../components/organisms/trainingItem'
 
 export default function Home() {
   return (
@@ -55,20 +56,7 @@ export default function Home() {
         <div className="px-4 lg:px-20 mt-28 md:mt-20">
           <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide">Our Training</h1>
 
-          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-4 md:flex justify-between lg:gap-5 mx-auto">
-            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
-              <h1 className="text-xl text-white drop-shadow-lg shadow-inner font-semibold">Muay Thai</h1>
-            </Link>
-            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
-              <h1 className="text-xl text-white font-semibold">Boxing</h1>
-            </Link>
-            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
-              <h1 className="text-xl text-white font-semibold">MMA</h1>
-            </Link>
-            <Link href="/detail" className="bg-[url('/img/gambar-training.jpg')] m-auto rounded-md bg-left p-5 flex-initial w-full lg:w-64 lg:hover:w-96 transition-all duration-700 cursor-pointer">
-              <h1 className="text-xl text-white font-semibold">BJJ</h1>
-            </Link>
-          </div>
+          <TrainingItem />
         </div>
 
         {/* About */}
