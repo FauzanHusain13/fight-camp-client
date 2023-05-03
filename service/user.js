@@ -10,6 +10,13 @@ export async function getTrainingItem() {
     return axiosResponse.data;
 }
 
+export async function getDetailTraining(id) {
+    const URL = `users/detailTraining/${id}`
+    const response = await axios.get(`${ROOT_API}/${API_VERSION}/${URL}`);
+    const axiosResponse = response.data;
+    return axiosResponse.data;
+}
+
 export async function getGalleryItem() {
     const URL = "users/gallery";
     const response = await axios.get(`${ROOT_API}/${API_VERSION}/${URL}`);
