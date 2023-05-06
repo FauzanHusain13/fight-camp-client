@@ -16,6 +16,16 @@ export async function getDetailTraining(id) {
     const axiosResponse = response.data;
     return axiosResponse.data;
 }
+export async function setCheckout(data) {
+    const URL = "users/checkout"
+    const url = `${ROOT_API}/${API_VERSION}/${URL}`;
+    return callApi({
+        url,
+        method: "POST",
+        data,
+        token: true
+    });
+}
 
 export async function getGalleryItem() {
     const URL = "users/gallery";
@@ -23,3 +33,4 @@ export async function getGalleryItem() {
     const axiosResponse = response.data;
     return axiosResponse.data;
 }
+

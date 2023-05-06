@@ -3,24 +3,9 @@ import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
 
-const Profile = () => {
-    const [isLogin, setIsLogin] = useState(false)
-    const [user, setUser] = useState({
-        username: "",
-        email: ""
-    })
-
-    useEffect(() => {
-        const token = Cookies.get("token")
-        if(token) {
-            const jwtToken = atob(token)
-            const payload = jwtDecode(jwtToken)
-            const userFromPayload = payload.user
-            setIsLogin(true)
-            setUser(userFromPayload)
-        }
-    }, [])
-
+const Profile = (props) => {
+    const user = props.user
+    
     return (
         <div className="px-8 sm:px-10 text-white">
             <h1 className="text-center text-3xl font-semibold">{user.username}</h1>
@@ -40,6 +25,27 @@ const Profile = () => {
             </div>
         </div>
     );
-  };
+};
   
-  export default Profile;
+export default Profile;
+
+export async function getServerSideProps({ req }) {
+    const { token } = req.cookies;
+    if(!token) {
+        return {
+            redirect: {
+                destination: "/sign-in",
+                permanent: false
+            }
+        }
+    }
+    const jwtToken = Buffer.from(token, "base64").toString("ascii")
+    const payload = jwtDecode(jwtToken)
+    const userFromPayload = payload.user
+
+    return {
+        props: {
+            user: userFromPayload
+        }
+    }
+}
