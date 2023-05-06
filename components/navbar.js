@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import Profile from "./profile";
 
 const Navbar = () => {
     const [open, setOpen]= useState(false);
@@ -32,7 +33,10 @@ const Navbar = () => {
                             </div>
                         ))
                     }
-                    <Link href="/sign-in" className='text-white bg-[#F05454] hover:bg-[#de3333] md:ml-9 text-sm duration-500 px-5 py-2 font-semibold rounded-sm cursor-pointer'>Sign in</Link>
+                    <div className='md:ml-10 text-sm md:my-0 my-7'>
+                        <Profile />
+                    </div>
+                    
                 </div>
             </div>
         </div>

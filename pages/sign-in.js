@@ -27,7 +27,7 @@ const Signin = () => {
             if(response.error) {
                 toast.error(response.message)
             } else {
-                toast.success("Login Berhasil!")
+                toast.success("Login Berhasil! Refresh dahulu")
                 const { token } = response.data
                 const tokenBase64 = btoa(token)
                 Cookies.set("token", tokenBase64, { expires: 1 })

@@ -1,10 +1,30 @@
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import jwtDecode from "jwt-decode";
 
 const Profile = () => {
+    const [isLogin, setIsLogin] = useState(false)
+    const [user, setUser] = useState({
+        username: "",
+        email: ""
+    })
+
+    useEffect(() => {
+        const token = Cookies.get("token")
+        if(token) {
+            const jwtToken = atob(token)
+            const payload = jwtDecode(jwtToken)
+            const userFromPayload = payload.user
+            setIsLogin(true)
+            setUser(userFromPayload)
+        }
+    }, [])
+
     return (
         <div className="px-8 sm:px-10 text-white">
-            <h1 className="text-center text-3xl font-semibold">Fauzan Husain</h1>
-            <p className="text-sm text-center mt-2 text-white/50">achmadfauzan1340@gmail.com</p>
+            <h1 className="text-center text-3xl font-semibold">{user.username}</h1>
+            <p className="text-sm text-center mt-2 text-white/50">{user.email}</p>
             <h1 className="w-full md:w-1/2 text-sm bg-white/10 text-white/70 py-2 text-center m-auto mt-10 tracking-widest">History Payment</h1>
             <hr className="mt-3 w-full md:w-1/2 m-auto" />
 
