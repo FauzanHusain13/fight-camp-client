@@ -1,4 +1,5 @@
 import axios from "axios";
+import callApi from "../config/api"
 
 const ROOT_API = "https://fight-camp-server-130806.up.railway.app";
 const API_VERSION = "api/v1";

@@ -14,13 +14,13 @@ const Detail = ({ training }) => {
 
     const router = useRouter()
 
-    const onSubmit = () => {
+    const onSubmit = async() => {
         if(membership === "" || bank === "") {
             toast.error("Silahkan isi semua data!")
         } else {
-            const confirmResult = window.confirm("Apakah Anda yakin ingin memesan?");
+            const confirmResult = window.confirm("Apakah Anda yakin ingin memesan?")
+
             if (confirmResult) {
-                toast.success("Berhasil pesan training!")
                 const data = {
                     training: training.detail._id,
                     membership, 
@@ -28,8 +28,14 @@ const Detail = ({ training }) => {
                     discount 
                 }
 
-                localStorage.setItem("data-training", JSON.stringify(data));
-                router.push("/")
+                const response = await setCheckout(data)
+                
+                if(response.error) {
+                    toast.error(response.message)
+                } else {
+                    toast.success("Checkout Berhasil!")
+                    router.push("/")
+                }
             }
         }
     }

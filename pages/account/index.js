@@ -1,11 +1,7 @@
-import Link from "next/link";
-import { useState, useEffect } from "react";
-import Cookies from "js-cookie";
-import jwtDecode from "jwt-decode";
+import Link from 'next/link';
+import jwtDecode from "jwt-decode"
 
-const Profile = (props) => {
-    const user = props.user
-    
+const Profile = ({ user }) => {
     return (
         <div className="px-8 sm:px-10 text-white">
             <h1 className="text-center text-3xl font-semibold">{user.username}</h1>
@@ -13,7 +9,7 @@ const Profile = (props) => {
             <h1 className="w-full md:w-1/2 text-sm bg-white/10 text-white/70 py-2 text-center m-auto mt-10 tracking-widest">History Payment</h1>
             <hr className="mt-3 w-full md:w-1/2 m-auto" />
 
-            <div className="mt-5w-full md:w-1/2 m-auto">
+            <div className="mt-5 w-full md:w-1/2 m-auto">
                 <Link href="/" className="mt-2 flex justify-evenly py-5 px-2 items-center bg-white/5 rounded-sm">
                     <h1 className="font-semibold">Muay Thai</h1>
                     <h1 className="font-semibold bg-red-600 px-2 py-1 rounded-lg">Platinum</h1>
@@ -31,21 +27,21 @@ export default Profile;
 
 export async function getServerSideProps({ req }) {
     const { token } = req.cookies;
-    if(!token) {
+    if (!token) {
         return {
             redirect: {
                 destination: "/sign-in",
                 permanent: false
             }
-        }
+        };
     }
-    const jwtToken = Buffer.from(token, "base64").toString("ascii")
-    const payload = jwtDecode(jwtToken)
-    const userFromPayload = payload.user
+    const jwtToken = Buffer.from(token, "base64").toString("ascii");
+    const payload = jwtDecode(jwtToken);
+    const userFromPayload = payload.user;
 
     return {
         props: {
             user: userFromPayload
         }
-    }
+    };
 }
