@@ -1,8 +1,10 @@
 import Image from "next/image"
 import { useState } from "react"
-import { getTrainingItem, getDetailTraining } from "../../service/user"
+import { getTrainingItem, getDetailTraining, setCheckout } from "../../service/user"
 
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useRouter } from "next/router";
 
 const Detail = ({ training }) => {
@@ -18,15 +20,16 @@ const Detail = ({ training }) => {
         } else {
             const confirmResult = window.confirm("Apakah Anda yakin ingin memesan?");
             if (confirmResult) {
-              const data = { 
-                membership, 
-                bank,
-                discount 
-              };
+                toast.success("Berhasil pesan training!")
+                const data = {
+                    training: training.detail._id,
+                    membership, 
+                    bank,
+                    discount 
+                }
 
-              console.log(data)
-              
-              localStorage.setItem("data-training", JSON.stringify(data));
+                localStorage.setItem("data-training", JSON.stringify(data));
+                router.push("/")
             }
         }
     }

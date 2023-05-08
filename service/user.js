@@ -16,6 +16,7 @@ export async function getDetailTraining(id) {
     const axiosResponse = response.data;
     return axiosResponse.data;
 }
+
 export async function setCheckout(data) {
     const URL = "users/checkout"
     const url = `${ROOT_API}/${API_VERSION}/${URL}`;
