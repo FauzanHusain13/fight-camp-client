@@ -30,7 +30,7 @@ const Signin = () => {
                 toast.success("Login Berhasil! Refresh dahulu")
                 const { token } = response.data
                 const tokenBase64 = btoa(token)
-                Cookies.set("token", tokenBase64, { expires: 1 })
+                Cookies.set("token", tokenBase64, { expires: 7 })
                 router.push("/")
             }
         }

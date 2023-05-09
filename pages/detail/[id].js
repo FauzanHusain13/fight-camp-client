@@ -18,8 +18,7 @@ const Detail = ({ training }) => {
         if(membership === "" || bank === "") {
             toast.error("Silahkan isi semua data!")
         } else {
-            const confirmResult = window.confirm("Apakah Anda yakin ingin memesan?")
-
+            const confirmResult = window.confirm("Apakah anda yakin ingin memesan?")
             if (confirmResult) {
                 const data = {
                     training: training.detail._id,
