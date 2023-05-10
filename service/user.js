@@ -36,3 +36,12 @@ export async function getGalleryItem() {
     return axiosResponse.data;
 }
 
+export async function getConfirmation() {
+    const URL = "users/confirmation"
+    const url = `${ROOT_API}/${API_VERSION}/${URL}`;
+    return callApi({
+        url,
+        method: "GET",
+        token: true
+    });
+}

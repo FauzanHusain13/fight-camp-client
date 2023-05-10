@@ -1,7 +1,24 @@
 import Link from 'next/link';
 import jwtDecode from "jwt-decode"
+import { useState, useEffect, useCallback } from 'react';
+import { getConfirmation } from '../../service/user';
 
 const Profile = ({ user }) => {
+    const [confirmationList, setConfirmationList] = useState([])
+
+    const getConfirmationList = useCallback(async() => {
+        const response = await getConfirmation()
+        if(response.error) {
+            toast.error(response.message)
+        } else {
+            setConfirmationList(response.data)
+        }
+    })
+
+    useEffect(() => {
+        getConfirmationList()
+    }, [])
+
     return (
         <div className="px-8 sm:px-10 text-white">
             <h1 className="text-center text-3xl font-semibold">{user.username}</h1>

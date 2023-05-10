@@ -30,7 +30,7 @@ const Detail = ({ training }) => {
                 const response = await setCheckout(data)
                 
                 if(response.error) {
-                    toast.error(response.message)
+                    toast.error("Not Authorized to Access This")
                 } else {
                     toast.success("Checkout Berhasil!")
                     router.push("/")
