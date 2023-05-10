@@ -20,21 +20,25 @@ const Profile = ({ user }) => {
     }, [])
 
     return (
-        <div className="px-8 sm:px-10 text-white">
-            <h1 className="text-center text-3xl font-semibold">{user.username}</h1>
-            <p className="text-sm text-center mt-2 text-white/50">{user.email}</p>
+        <div className="px-2 sm:px-10 text-white">
+            <div className="md:w-1/2 m-auto text-center">
+                <h1 className="text-3xl font-semibold">{user.username}</h1>
+                <p className="text-sm mt-2 text-white/50">{user.email}</p>
+            </div>
             <h1 className="w-full md:w-1/2 text-sm bg-white/10 text-white/70 py-2 text-center m-auto mt-10 tracking-widest">History Payment</h1>
             <hr className="mt-3 w-full md:w-1/2 m-auto" />
 
             <div className="mt-5 w-full md:w-1/2 m-auto">
-                <Link href="/" className="mt-2 flex justify-evenly py-5 px-2 items-center bg-white/5 rounded-sm">
-                    <h1 className="font-semibold">Muay Thai</h1>
-                    <h1 className="font-semibold bg-red-600 px-2 py-1 rounded-lg">Platinum</h1>
-                </Link>
-                <Link href="/" className="mt-2 flex justify-evenly py-5 px-2 items-center bg-white/5 rounded-sm">
-                    <h1 className="font-semibold">Muay Thai</h1>
-                    <h1 className="font-semibold bg-red-600 px-2 py-1 rounded-lg">Platinum</h1>
-                </Link>
+                {confirmationList.map(item => {
+                    return(
+                        <Link key={item._id} href="/" className="mt-2 flex justify-between py-5 px-2 md:px-8 items-center bg-white/5 rounded-sm">
+                            <h1 className="font-semibold text-xs md:text-sm">{item.historyTraining.trainingName}</h1>
+                            <h1 className="font-semibold text-xs md:text-sm">Rp <span className="font-normal">250000</span></h1>
+                            <h1 className="font-semibold text-xs md:text-sm bg-red-600 text-center px-2 py-1 rounded-lg">Platinum</h1>
+                            <h1 className="text-xs">Pending</h1>
+                        </Link>
+                    )
+                })}
             </div>
         </div>
     );
