@@ -1,13 +1,17 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import jwtDecode from "jwt-decode"
 import { useState, useEffect, useCallback } from 'react';
 import { getConfirmation } from '../../service/user';
+
+import { NumericFormat } from 'react-number-format';
 
 const Profile = ({ user }) => {
     const [confirmationList, setConfirmationList] = useState([])
 
     const getConfirmationList = useCallback(async() => {
         const response = await getConfirmation()
+        console.log(response)
         if(response.error) {
             toast.error(response.message)
         } else {
@@ -20,6 +24,10 @@ const Profile = ({ user }) => {
     }, [])
 
     return (
+        <>
+        <Head>
+            <title>Fight camp || account</title>
+        </Head>
         <div className="px-2 sm:px-10 text-white">
             <div className="md:w-1/2 m-auto text-center">
                 <h1 className="text-3xl font-semibold">{user.username}</h1>
@@ -31,16 +39,17 @@ const Profile = ({ user }) => {
             <div className="mt-5 w-full md:w-1/2 m-auto">
                 {confirmationList.map(item => {
                     return(
-                        <Link key={item._id} href="/" className="mt-2 flex justify-between py-5 px-2 md:px-8 items-center bg-white/5 rounded-sm">
+                        <Link key={item._id} href={`/account/history/${item._id}`} className="mt-2 flex justify-between py-5 px-2 md:px-8 items-center bg-white/5 rounded-sm">
                             <h1 className="font-semibold text-xs md:text-sm">{item.historyTraining.trainingName}</h1>
-                            <h1 className="font-semibold text-xs md:text-sm">Rp <span className="font-normal">250000</span></h1>
-                            <h1 className="font-semibold text-xs md:text-sm bg-red-600 text-center px-2 py-1 rounded-lg">Platinum</h1>
-                            <h1 className="text-xs">Pending</h1>
+                            <h1 className="font-semibold text-xs md:text-sm"><NumericFormat prefix="Rp. " value={item.total} displayType="text" thousandSeparator="." decimalSeparator="," /></h1>
+                            <h1 className="font-semibold text-xs md:text-sm bg-red-600 text-center px-2 py-1 rounded-lg">{item.historyTraining.package}</h1>
+                            <h1 className="text-xs">{item.status}</h1>
                         </Link>
                     )
                 })}
             </div>
         </div>
+        </>
     );
 };
   

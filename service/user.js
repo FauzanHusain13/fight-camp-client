@@ -45,3 +45,13 @@ export async function getConfirmation() {
         token: true
     });
 }
+
+export async function getConfirmationDetail(id, token) {
+    const URL = `users/confirmation/${id}`
+    const url = `${ROOT_API}/${API_VERSION}/${URL}`;
+    return callApi({
+        url,
+        method: "GET",
+        serverToken: token
+    })
+}
