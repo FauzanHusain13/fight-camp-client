@@ -25,7 +25,14 @@ const DetailHistory = ({ confirmationDetail, user }) => {
                                 <div className="flex justify-between">
                                     <div>
                                         <h1 className="font-semibold text-2xl tracking-wide">{item.historyTraining.trainingName}</h1>
-                                        <p className="text-sm mt-4 font-semibold text-white/60"><NumericFormat prefix="Rp. " value={item.historyTraining.price} displayType="text" thousandSeparator="." decimalSeparator="," /> - <NumericFormat prefix="Discount : Rp. " value={item.historyDiscount.discount ? item.historyDiscount.discount : 0} displayType="text" thousandSeparator="." decimalSeparator="," /></p>
+                                        <div className="flex">
+                                            <p className="text-sm mt-4 font-semibold text-white/60"><NumericFormat prefix="Rp. " value={item.historyTraining.price} displayType="text" thousandSeparator="." decimalSeparator="," />{' '} -</p>
+                                            {item.historyDiscount && item.historyDiscount.discount && (
+                                                <p className="text-sm mt-4 font-semibold text-white/60">
+                                                    -{' '}<NumericFormat prefix="Discount : Rp. " value={item.historyDiscount.discount} displayType="text" thousandSeparator="." decimalSeparator="," />
+                                                </p>
+                                            )}
+                                        </div>
                                     </div>
 
                                     <div>
