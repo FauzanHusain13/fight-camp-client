@@ -6,7 +6,6 @@ import jwtDecode from "jwt-decode";
 import { getConfirmationDetail } from "../../../service/user"
 
 const DetailHistory = ({ confirmationDetail, user }) => {
-    console.log(user)
     return (
         <>
         <Head>
